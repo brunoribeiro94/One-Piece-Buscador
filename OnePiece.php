@@ -73,7 +73,7 @@ class OnePiece {
                 if ($this->ChecarManga()) {
                     $msg = sprintf("<br> Saiu o novo capítulo %d de One Piece <br>", $this->manga);
                     if (!$this->email) {
-                        echo "</br>" . $msg . "</br>";
+                        echo "\n" . $msg . "\n";
                     } else {
                         mail($this->email, "Novo capítulo {$this->anime} de One Piece", $msg);
                     }
@@ -84,7 +84,7 @@ class OnePiece {
                 if ($this->ChecarAnime()) {
                     $msg = sprintf("Saiu o novo episódio %d de One Piece", $this->anime);
                     if (!$this->email) {
-                        echo "</br>" . $msg . "</br>";
+                        echo "\n" . $msg . "\n";
                     } else {
                         mail($this->email, "Novo episódio {$this->anime} de One Piece", $msg);
                     }
