@@ -5,11 +5,6 @@
 # ----------------------------------------- 
 ini_set('default_charset', 'UTF-8');
 
-# -----------------------------------------
-# Timezone
-# -----------------------------------------
-date_default_timezone_set('America/Maceio');
-
 /**
  * Classe para verificar lançamentos de anime ou manga
  * de One Piece.
