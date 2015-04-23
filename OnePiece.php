@@ -71,7 +71,7 @@ class OnePiece {
             // Procura novo manga
             if (!!$this->manga) {
                 if ($this->ChecarManga()) {
-                    $msg = sprintf("<br> Saiu o novo capítulo %d de One Piece <br>", $this->manga);
+                    $msg = sprintf("\n Saiu o novo capítulo %d de One Piece \n", $this->manga);
                     if (!$this->email) {
                         echo "\n" . $msg . "\n";
                     } else {
