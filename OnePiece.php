@@ -130,7 +130,7 @@ class OnePiece {
         curl_setopt($cURL, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:33.0) Gecko/20100101 Firefox/33.0");
         $resultado = curl_exec($cURL);
         curl_close($cURL);
-        if (eregi(sprintf("Episódio %d", $this->anime), $resultado)) {
+        if (eregi(sprintf("/episodios/online/%d", $this->anime), $resultado)) {
             return true;
         } else {
             return false;
