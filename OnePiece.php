@@ -63,27 +63,32 @@ class OnePiece {
         if (!$this->manga && !$this->anime) {
             die('Você precisa escolher qual lançamento você deseja receber !');
         } else {
-            // Procura novo manga
-            if (!!$this->manga) {
-                if ($this->ChecarManga()) {
-                    $msg = sprintf("\n Saiu o novo capítulo %d de One Piece \n", $this->manga);
-                    if (!$this->email) {
-                        echo "\n" . $msg . "\n";
-                    } else {
-                        mail($this->email, "Novo capítulo {$this->anime} de One Piece", $msg);
+            while (true) {
+                // Procura novo manga
+                if (!!$this->manga) {
+                    if ($this->ChecarManga()) {
+                        $msg = sprintf("\n Saiu o novo capítulo %d de One Piece \n", $this->manga);
+                        if (!$this->email) {
+                            echo "\n $msg \n";
+                            break;
+                        } else {
+                            mail($this->email, "Novo capítulo {$this->anime} de One Piece", $msg);
+                        }
                     }
                 }
-            }
-            // Procurar novo anime
-            if (!!$this->anime) {
-                if ($this->ChecarAnime()) {
-                    $msg = sprintf("Saiu o novo episódio %d de One Piece", $this->anime);
-                    if (!$this->email) {
-                        echo "\n" . $msg . "\n";
-                    } else {
-                        mail($this->email, "Novo episódio {$this->anime} de One Piece", $msg);
+                // Procurar novo anime
+                if (!!$this->anime) {
+                    if ($this->ChecarAnime()) {
+                        $msg = sprintf("Saiu o novo episódio %d de One Piece", $this->anime);
+                        if (!$this->email) {
+                            echo "\n $msg \n";
+                            break;
+                        } else {
+                            mail($this->email, "Novo episódio {$this->anime} de One Piece", $msg);
+                        }
                     }
                 }
+                sleep(5);
             }
         }
     }
